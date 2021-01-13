@@ -88,4 +88,8 @@ target/
 # Mypy cache
 .mypy_cache/
 
+# data
 data/
+
+# paired tutorial for convence
+pyspark-examples/

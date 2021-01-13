@@ -12,13 +12,14 @@ Polish up your data processing skill using pyspark!
 |-------|----|---------|-------|------|
 | 001 |  1/11|[hello_world](001_hello_world.py)  |  [spark-examples/pyspark-examples](https://github.com/spark-examples/pyspark-examples)||
 | 002 |  1/12|[create_spark_session](002_create_spark_session.py)  | [How to create SparkSession](https://sparkbyexamples.com/pyspark/pyspark-what-is-sparksession/)||
-| 003 |  1/12|[PySpark – Accumulator](003_accumulator.py)  |[PySpark – Accumulator](https://sparkbyexamples.com/pyspark/pyspark-accumulator-with-example/)||
-| 004 |  TODO |[PySpark – RDD](004_rdd.py)  |[PySpark – RDD](https://sparkbyexamples.com/pyspark-rdd)||
-| 005 |  TODO|[PySpark – parallelize()](003_accumulator.py)  |[PySpark – Parallelize](https://sparkbyexamples.com/pyspark/pyspark-parallelize-create-rdd/)|
+| 003 |  1/12|[accumulator](003_accumulator.py)  |[Accumulator](https://sparkbyexamples.com/pyspark/pyspark-accumulator-with-example/)||
+| 004 |  1/13 |[RDD](004_rdd.py)  |[RDD](https://sparkbyexamples.com/pyspark-rdd)||
+| 005 |  1/13 |[Repartition() vs Coalesce()](005_repartition_coalesce.py)  |[Repartition() vs Coalesce()](https://sparkbyexamples.com/pyspark/pyspark-repartition-vs-coalesce/)||
 
 # Terminology
 
 * [x] rdd
+* [x] repartition/coalesce
 * [] spark cluster vm/multiple-host
 * [] yarn
 * [] mesos

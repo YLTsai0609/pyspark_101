@@ -20,6 +20,8 @@ from pyspark.sql import SparkSession
 # local[x], x通常是你有幾個CPU，spark幫你包好了多進程or多線程的API
 # appName，能夠透過一個域名來訪問master
 # getOrCreate() - 單例模式
+# 當我們建立一個SparkSession，裡面其實在每個JVM上開了一個SparkContext
+
 spark = SparkSession.builder.master("local[1]") \
     .appName('SparkByExamples.com') \
     .getOrCreate()

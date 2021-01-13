@@ -1,7 +1,7 @@
 '''
 1. https://sparkbyexamples.com/pyspark-rdd
 2. https://kknews.cc/zh-tw/code/j24qnle.html
-
+3. Official RDD programming guide https://spark.apache.org/docs/latest/rdd-programming-guide.html
 RDD - Resilient Distributed Dataset 可回覆式(或稱彈性式)分散式資料集
 
 這要說到Hadoop，Hadoop這篇論文是Google實作的一個檔案系統外加Map Reduce
@@ -36,12 +36,24 @@ PySpark RDD的特色
 5. Partitioning
     當你從資料建立RDD時，預設會把它做partition，
     預設是看你有幾個core就做幾個partition
+
+6. SparkContext有非常多rdd的方法可以叫
+    1. parallelize() - create rdd from list
+    2. textFile() - (.txt file) into RDD
+    3. wholeTextFiles() - PairRDD with key : filepath, value : file content
+    4. emptyRDD - attribute, RDD with no data, no partition
+    5. parallelize([], 10) - emptyRDD with 10 partitions.
+
+Dig more 
+https://sparkbyexamples.com/pyspark-rdd/
+
 '''
 
 # 建立RDD
 
 # 1. parallelizing from existing collection
-# 2. referencing a dataset in an external sotrage ststem(HDFS, S3, HBase)
+# 2. (Often used for production application)
+# referencing a dataset in an external sotrage ststem(HDFS, S3, HBase)
 
 from pyspark.sql import SparkSession
 spark = SparkSession.builder.master("local[1]") \
@@ -50,6 +62,8 @@ spark = SparkSession.builder.master("local[1]") \
 
 
 data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-rdd = spark.sparkContext.parallelize(data)
+rdd = spark.sparkContext.parallelize(data, 4)
 print('Method of RDD : ', dir(rdd))
-print("RDD count :" + str(rdd.count()))
+print('initial partition count : ', str(rdd.getNumPartitions()))
+print("RDD count : " + str(rdd.count()))
+print('Whole list is : ', rdd.collect())
