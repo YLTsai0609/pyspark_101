@@ -8,21 +8,34 @@ Polish up your data processing skill using pyspark!
 
 # Marathon
 
-| Content ID   |Date| Content | From  | Note |
+The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-examples/pyspark-examples)
+
+## Pyspark basic
+
+| Content ID   |Date| Content   | Note |
 |-------|----|---------|-------|------|
-| 001 |  1/11|[hello_world](001_hello_world.py)  |  [spark-examples/pyspark-examples](https://github.com/spark-examples/pyspark-examples)||
-| 002 |  1/12|[create_spark_session](002_create_spark_session.py)  | [How to create SparkSession](https://sparkbyexamples.com/pyspark/pyspark-what-is-sparksession/)||
-| 003 |  1/12|[accumulator](003_accumulator.py)  |[Accumulator](https://sparkbyexamples.com/pyspark/pyspark-accumulator-with-example/)||
-| 004 |  1/13 |[RDD](004_rdd.py)  |[RDD](https://sparkbyexamples.com/pyspark-rdd)||
-| 005 |  1/13 |[Repartition() vs Coalesce()](005_repartition_coalesce.py)  |[Repartition() vs Coalesce()](https://sparkbyexamples.com/pyspark/pyspark-repartition-vs-coalesce/)||
+| 001 |  1/11|[hello_world](001_hello_world.py)  | |
+| 002 |  1/12|[create_spark_session](002_create_spark_session.py)  | |
+| 003 |  1/12|[accumulator](003_accumulator.py)  ||
+| 004 |  1/13 |[RDD creation](004_rdd_creation.py)  ||
+| 005 |  1/13 |[RDD pararllelization Repartition() vs Coalesce()](005_rdd_repartition_coalesce.py)  ||
+| 006 |  1/18 |[TODO RDD operations - transformations](006_rdd_transformation.py)  ||
+
+## Pyspark DataFrame
+
+| Content ID   |Date| Content   | Note |
+|-------|----|---------|-------|------|
+| d001 |  1/18| [create_dataframe](d001_create_dataframe.py)  |  |
+| d002 |  1/18| [create_empty_dataframe](d002_create_empty_dataframe.py)  |  |
+| d003 |  1/18| [spark_frame_to_pandas_frame](d003_pyspark_dataframe_to_pandas.py)  |  |
 
 # Terminology
 
 * [x] rdd
 * [x] repartition/coalesce
-* [] spark cluster vm/multiple-host
-* [] yarn
-* [] mesos
+* [ ] spark cluster vm/multiple-host
+* [ ] yarn
+* [ ] mesos
 
 # Reference
 

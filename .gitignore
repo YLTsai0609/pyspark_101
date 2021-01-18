@@ -91,5 +91,6 @@ target/
 # data
 data/
 
-# paired tutorial for convence
-pyspark-examples/
+# tutorial and cluster
+third_party_pyspark_example/
+spark_docker_cluster/
