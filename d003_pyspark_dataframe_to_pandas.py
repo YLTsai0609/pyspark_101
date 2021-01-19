@@ -5,6 +5,12 @@ well-done by the api,
 
 collect the data from cluster then put in into single machine memory
 
+
+####### Types
+
+StructType is a collection or list of StructField objects.
+
+printSchema() method on the DataFrame shows StructType columns as “struct”.
 '''
 
 import pyspark
