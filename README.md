@@ -32,6 +32,9 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 | d0012 |1/18| [create_dataframe_json](d0012_create_dataframe_json.py)  |  |
 | d002 |1/18| [create_empty_dataframe](d002_create_empty_dataframe.py)  |  |
 | d003 |1/18| [spark_frame_to_pandas_frame](d003_pyspark_dataframe_to_pandas.py)  |  |
+| d004 |1/20| [structType/structField from d004 - d0042](d004_structtype.py)  |  |
+| d005 |1/20| [Row object d005](d005_row.py)  |  |
+| d006 |1/20| [select column from dataframe](d006_select_column.py)  |  |
 
 # Terminology
 
