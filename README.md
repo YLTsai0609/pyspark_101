@@ -36,11 +36,19 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 | d005 |1/20| [Row object d005](d005_row.py)  |  |
 | d006 |1/20| [select column from dataframe](d006_select_column.py)  |  |
 
+## Addtiional
+
+| Content ID |Date| Content | Note |
+|------------|----|---------|------|
+| 001 |1/21| MapReduce  |  |
+| 002 |1/21| spark_best_practice(continuously updating)  |  |
+| 003 |1/21| TODO how spark improve MapReduce |  |
+
 # Terminology
 
 * [x] rdd
 * [x] repartition/coalesce
-* [ ] spark cluster vm/multiple-host
+* [x] map-reduce
 * [ ] yarn
 * [ ] mesos
 
