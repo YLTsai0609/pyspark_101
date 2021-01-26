@@ -35,6 +35,10 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 | d004 |1/20| [structType/structField from d004 - d0042](d004_structtype.py)  |  |
 | d005 |1/20| [Row object d005](d005_row.py)  |  |
 | d006 |1/20| [select column from dataframe](d006_select_column.py)  |  |
+| d007 |1/26| [retreve_data_from_dataframe](d007_retrieve_from_dataframe.py)  |  |
+| d008 |1/26| [add, update, drop column in a dataframe](d008_add_update_column.py)  |  |
+
+TODO SparkUI
 
 ## Addtiional
 
@@ -42,7 +46,8 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 |------------|----|---------|------|
 | 001 |1/21| MapReduce  |  |
 | 002 |1/21| spark_best_practice(continuously updating)  |  |
-| 003 |1/21| TODO how spark improve MapReduce |  |
+| 003 |1/26| Introduction to Spark(I) |  |
+| 004 || TODO Introduction to Spark(II) stage |  |
 
 # Terminology
 
