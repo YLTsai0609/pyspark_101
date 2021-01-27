@@ -37,6 +37,11 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 | d006 |1/20| [select column from dataframe](d006_select_column.py)  |  |
 | d007 |1/26| [retreve_data_from_dataframe](d007_retrieve_from_dataframe.py)  |  |
 | d008 |1/26| [add, update, drop column in a dataframe](d008_add_update_column.py)  |  |
+| d009 |1/27| [filter rows](d009_filter_rows.py)  |  |
+| d010 |1/27| [filter null](d010_filter_nulls.py)  |  |
+| d011 |1/27| [drop_na](d011_drop_na.py)  |  |
+| d012 |1/27| [drop_duplicated](d012_drop_duplicated.py)  |  |
+| d013 |1/27| [sorting](d013_orderby_vs_sort.py)  |  |
 
 TODO SparkUI
 
