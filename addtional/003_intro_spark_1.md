@@ -33,7 +33,7 @@ RDD裡面並不是真的資料，而是一些meta info，紀錄要怎麼做可�
 
 ### shuffle and stage
 
-RDD的Transformation函數中，又分為窄相依(marrow dependency)和寬相依(wide dependency)，區別是是否shuffle
+RDD的Transformation函數中，又分為窄相依(narrow dependency)和寬相依(wide dependency)，區別是否shuffle
 
 narrow dependency : partition的運算不依賴其他partition(map in hadoop)
 
@@ -43,7 +43,7 @@ wide dependency : RDD各個partition會依賴於其他partition(reduce in hadoop
 
 ``` Python
 val rdd2 =\
-     rdd1.groupBu(x => x._1).Map(x => (x._1, x._2.toList.length))
+     rdd1.groupBy(x => x._1).Map(x => (x._1, x._2.toList.length))
 ```
 
 為了計算相同key下元素的個數，**需要相同key的元素聚集到同一個partition之下，所以必須讓partition進行溝通，資料在記憶體中重新分配，這是一個shuffle操作，shuffle操作是spark中最慢的操作，盡量避免不必要的shulle**
@@ -57,8 +57,6 @@ shuffle write 將 ShuffleMapTask任務產生的中間結果暫存到記憶體中
 Shuffle fetch獲得ShuffleMapTask記憶體中的中間結果並進行ShuffleReduceTask的計算，**這個過程容易OOM**，shuffle過程中記憶體的分配是使用 `ShuffleMemoryManager` 進行管理，會針對每個Task分配記憶體，Task完成後透過 `Executor` 釋放記憶體
 
 最近亦有很多論文是針對shuffle過程進行記憶體優化
-
-TODO Stage
 
 # Reference
 

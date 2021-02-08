@@ -22,6 +22,7 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 | 004          |1/13|[RDD creation](004_rdd_creation.py)  ||
 | 005          |1/13|[RDD pararllelization Repartition() vs Coalesce()](005_rdd_repartition_coalesce.py)  ||
 | 006          |1/18|[RDD operations - transformations (from 006 - 0064)](006_rdd_transformation.py)  ||
+| 007          |2/8|[cluster managers](addtional/004_cluster_manager.md)  ||
 
 ## Pyspark DataFrame
 
@@ -42,6 +43,9 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 | d011 |1/27| [drop_na](d011_drop_na.py)  |  |
 | d012 |1/27| [drop_duplicated](d012_drop_duplicated.py)  |  |
 | d013 |1/27| [sorting](d013_orderby_vs_sort.py)  |  |
+| d014 |2/8| [groupby](d014_groupby.py) |  |
+| d015 |2/8| [join](d015_join.py) |  |
+| d016 |2/8| [union](d016_union.py) |  |
 
 TODO SparkUI
 
@@ -59,8 +63,8 @@ TODO SparkUI
 * [x] rdd
 * [x] repartition/coalesce
 * [x] map-reduce
-* [ ] yarn
-* [ ] mesos
+* [x] yarn
+* [x] mesos
 
 # Reference
 
