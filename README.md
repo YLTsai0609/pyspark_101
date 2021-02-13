@@ -8,7 +8,7 @@ Polish up your data processing skill using pyspark!
 
 # Marathon
 
-**This repo contains 33 example scripts so far.**
+**This repo contains 41 example scripts so far.**
 
 The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-examples/pyspark-examples)
 
@@ -53,6 +53,17 @@ total : 23 scripts.
 | d017 |2/9| [udf](d017_udf.py) |  |
 | d018 |2/9| [flatmap](d018_flatmap.py) |  |
 | d019 |2/9| [map](d019_map.py) |  |
+| d020 |2/13| [sampling](d020_sampling.py) |  |
+| d021 |2/13| [aggregation](d021_aggregation.py) |  |
+| d022 |2/13| [add_month](d022_add_month.py) |  |
+| d023 |2/13| [split](d023_split.py) |  |
+
+## PySpark data processing package
+
+| Content ID |Date| Content | Note |
+|------------|----|---------|------|
+|p001|2/13|[spark-df-profiling](https://github.com/julioasotodv/spark-df-profiling)|TODO|
+
 
 ## PySpark SQL Functions
 
@@ -90,3 +101,5 @@ total : 23 scripts.
 [spark-examples/pyspark-examples](https://github.com/spark-examples/pyspark-examples)
 
 [spark python api documentation 3.0.1](https://spark.apache.org/docs/latest/api/python/index.html)
+
+[pandas 101 from yulong's note](https://github.com/YLTsai0609/pandas_101)
