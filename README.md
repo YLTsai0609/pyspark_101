@@ -26,9 +26,11 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 
 TODO SparkUI
 
-## Pyspark DataFrame
+TODO RDD
 
-total : 23 scripts.
+TODO control partitioning
+
+## Pyspark DataFrame
 
 | Content ID |Date| Content | Note |
 |------------|----|---------|------|
@@ -62,20 +64,18 @@ total : 23 scripts.
 
 | Content ID |Date| Content | Note |
 |------------|----|---------|------|
-|p001|2/13|[spark-df-profiling](https://github.com/julioasotodv/spark-df-profiling)|TODO|
+|p001|2/13|[spark-df-profiling](https://github.com/julioasotodv/spark-df-profiling)|setup doc on `pkg/p001`|
 
 
-## PySpark SQL Functions
-
-| Content ID |Date| Content | Note |
-|------------|----|---------|------|
-||||
 
 ## PySpark DataSource
 
 | Content ID |Date| Content | Note |
 |------------|----|---------|------|
-||||
+|d0011_create_dataframe_csv|||
+|d0012_create_dataframe_json|||
+
+TODO parquet
 
 ## Addtiional
 
@@ -93,6 +93,7 @@ total : 23 scripts.
 * [x] map-reduce
 * [x] yarn
 * [x] mesos
+* [ ] [parquet](https://parquet.apache.org/)
 
 # Reference
 
@@ -103,3 +104,5 @@ total : 23 scripts.
 [spark python api documentation 3.0.1](https://spark.apache.org/docs/latest/api/python/index.html)
 
 [pandas 101 from yulong's note](https://github.com/YLTsai0609/pandas_101)
+
+
