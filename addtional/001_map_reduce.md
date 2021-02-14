@@ -1,12 +1,12 @@
 # Terminology
 
-<img src='./asserts/mr_2.png'></img>
-<img src='./asserts/mr_3.png'></img>
-<img src='./asserts/mr_4.png'></img>
+<img src='./assets/mr_2.png'></img>
+<img src='./assets/mr_3.png'></img>
+<img src='./assets/mr_4.png'></img>
 
 # MapReduce
 
-<img src='./asserts/mr_1.png'></img>
+<img src='./assets/mr_1.png'></img>
 
 1. Splitting - 切分Partition，每個Partition可以是一個獨立，不和其他worker溝通的運算工作
 2. Mapping - 僅需在本地端計算的運算工作
@@ -22,7 +22,7 @@ MapReduce這套運算框架的設計重點 : 盡可能地減少機台之間的�
 
 ## In the hadoop
 
-<img src='./asserts/mr_5.png'></img>
+<img src='./assets/mr_5.png'></img>
 
 JobTracker創建job時，會分配一個job_id，接下來進行一系列操作
 

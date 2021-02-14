@@ -84,7 +84,8 @@ TODO parquet
 | 001 |1/21| MapReduce  |  |
 | 002 |1/21| spark_best_practice(continuously updating)  |  |
 | 003 |1/26| Introduction to Spark(I) |  |
-| 004 || TODO Introduction to Spark(II) stage |  |
+| 004 |2/14| Apache Parquet 2.0 |  |
+| 006 || Introduction to Spark(II) |  |
 
 # Terminology
 
@@ -93,7 +94,7 @@ TODO parquet
 * [x] map-reduce
 * [x] yarn
 * [x] mesos
-* [ ] [parquet](https://parquet.apache.org/)
+* [x] parque
 
 # Reference
 
@@ -105,4 +106,4 @@ TODO parquet
 
 [pandas 101 from yulong's note](https://github.com/YLTsai0609/pandas_101)
 
-
+[Apache Parquet 2.0](https://parquet.apache.org/)
