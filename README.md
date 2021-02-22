@@ -23,8 +23,9 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 | 005          |1/13|[RDD pararllelization Repartition() vs Coalesce()](005_rdd_repartition_coalesce.py)  ||
 | 006          |1/18|[RDD operations - transformations (from 006 - 0064)](006_rdd_transformation.py)  ||
 | 007          |2/8|[cluster managers](addtional/004_cluster_manager.md)  ||
+| 008          |2/22|[spark UI](addtional/004_cluster_manager.md)  ||
 
-TODO SparkUI
+TODO Histroy Server / SparkUI
 
 TODO RDD
 
@@ -64,9 +65,7 @@ TODO control partitioning
 
 | Content ID |Date| Content | Note |
 |------------|----|---------|------|
-|p001|2/13|[spark-df-profiling](https://github.com/julioasotodv/spark-df-profiling)|setup doc on `pkg/p001`|
-
-
+|p001|2/13|[spark-df-profiling](https://github.com/julioasotodv/spark-df-profiling)|setup doc on `pkg/p001` |
 
 ## PySpark DataSource
 
