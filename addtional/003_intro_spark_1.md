@@ -37,11 +37,11 @@ RDD的Transformation函數中，又分為窄相依(narrow dependency)和寬相�
 
 narrow dependency : partition的運算不依賴其他partition(map in hadoop)，例如map，filter函式
 
-<img src='./assrts/introspark_1.png'></img>
+<img src='./assets/introspark_1.png'></img>
 
 wide dependency : RDD各個partition會依賴於其他partition(reduce in hadoop)，例如groupby，reduce函式
 
-<img src='./assrts/introspark_2.png'></img>
+<img src='./assets/introspark_2.png'></img>
 
 例如groupby : 
 

@@ -24,6 +24,8 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 | 006          |1/18|[RDD operations - transformations (from 006 - 0064)](006_rdd_transformation.py)  ||
 | 007          |2/8|[cluster managers](addtional/004_cluster_manager.md)  ||
 | 008          |2/22|[spark UI](addtional/004_cluster_manager.md)  ||
+| 009          |2/23|[RDD shuffle](009_rdd_shuffle.py)  ||
+| 009          |2/23|[RDD persist](010_rdd_persist.py)  ||
 
 TODO Histroy Server / SparkUI
 
@@ -60,6 +62,8 @@ TODO control partitioning
 | d021 |2/13| [aggregation](d021_aggregation.py) |  |
 | d022 |2/13| [add_month](d022_add_month.py) |  |
 | d023 |2/13| [split](d023_split.py) |  |
+| d024 |2/23| [regular expression on pyspark dataframe](d024_re_dataframe.py) |  |
+| d025 |2/24| [extract img src tag in html by pyspark](d0242_re_dataframe.py) |  |
 
 ## PySpark data processing package
 

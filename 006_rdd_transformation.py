@@ -8,6 +8,10 @@ RDD transformations –
     instead of updating an RDD, these operations return another RDD.
 RDD actions – 
     operations that trigger computation and return RDD values.
+
+RDD transformation -
+     wide dependency - need connection to exchange data with the other partition
+     narrow dependency - can compute in individual partition
 '''
 
 import pyspark
