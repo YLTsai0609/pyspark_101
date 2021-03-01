@@ -80,15 +80,18 @@ df.show()
 
 
 # Sol 3 same thing, 把string切開之後，explode，使用re
-# 分隔符不能切到我們要的內容
+# 1. split 分隔符不能切到我們要的內容
+# 2-1. (http.*[jpg|png])\" - 會抓到https://pic.pimg.tw/happy78/1528543959-4177938168_n.jpg" title="IMG_5227.jpg"，中間會有空白
+# 2-2. (http\S+[jpg|png])\".*title - 配title才不會抓到奇怪的html
+# 2-3. 接著在把" title"丟掉
 df = (
     df
     .withColumn("img_url", F.split(C('text'), "src=\""))  # \" 是逃脫字元，讓其可以配對到雙引號
     # split之後會變成一個list，把他炸開變成row-base
     .withColumn("img_url", F.explode(C('img_url')))
-    # 接著進行re match
-    .withColumn("img_url", F.regexp_extract(C('img_url'), '(http.*[jpg|png])\".*title', 0))
-    # 並把 " title" 替換掉
+    # 接著進行re match，以http開頭，沒有空白字元(\S)，一個或多個，會配到jpg或是png，並以title結尾
+    .withColumn("img_url", F.regexp_extract(C('img_url'), r'(http\S+[jpg|png])\".*title', 0))
+    # " title" 替換掉
     .withColumn("img_url", F.regexp_replace(C('img_url'), r'\"\s+title', ''))\
     # 沒有被配到的會是空字串，無法直接drop，把他們換成null，使用when function
     .withColumn("img_url", F.when(C('img_url') == '', None).otherwise(C('img_url')))\
