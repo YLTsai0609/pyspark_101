@@ -63,7 +63,7 @@ TODO control partitioning
 | d022 |2/13| [add_month](d022_add_month.py) |  |
 | d023 |2/13| [split](d023_split.py) |  |
 | d024 |2/23| [regular expression on pyspark dataframe](d024_re_dataframe.py) |  |
-| d025 |2/24| [extract img src tag in html by pyspark](d0242_re_dataframe.py) |  |
+| d025 |3/1| [extract img src tag in html by pyspark](d0242_re_extract_img_url_in_html.py) |  |
 
 ## PySpark data processing package
 

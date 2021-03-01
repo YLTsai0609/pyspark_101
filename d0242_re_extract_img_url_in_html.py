@@ -59,29 +59,44 @@ df.show()
 # df = df.withColumn('img_url_list', get_img_url_list_udf('text'))
 # df.show(n=50, truncate=False, vertical=True)
 
-# SOl 2 先split, 在explore，在regex_extract()，return image level dataframe
-# pass
-# df = df.withColumn("split_img_tag", F.split(df['text'], '<img.*jpg'))\
-#     .drop(df['text'])\
-#     # .show(n=20, truncate=False, vertical=True)
 
 # df.select(F.explode(df['split_img_tag']))\
 #     .show(n=20, truncate=False, vertical=True)
 
-# Sol 3 work around, 透過string split來切分，explode之後，最後在groupby起來
-# 需要一個row number
+# Sol 2 work around, 透過string split來切分，explode之後，最後在groupby起來
+# This solution provide by jack
+# df = (
+#     df
+#     .withColumn("img_url", F.split(C('text'), "src=\""))
+#     .withColumn("img_url", F.explode(C('img_url')))
+# .withColumn("img_url", F.split(C('img_url'), "\" title"))
+# .withColumn("img_url", F.explode(C('img_url')))
+# .where(C("img_url").rlike(".jpg|.png"))
+# .where(C("img_url").rlike("https"))
+# .where(~C("img_url").rlike("href"))
+# .groupBy("id").agg(F.collect_list(C("img_url")).alias("img_url"))
+# .drop(C('text'))
+# )
+
+
+# Sol 3 same thing, 把string切開之後，explode，使用re
+# 分隔符不能切到我們要的內容
 df = (
     df
-    .withColumn("img_url", F.split(C('text'), "src=\""))
+    .withColumn("img_url", F.split(C('text'), "src=\""))  # \" 是逃脫字元，讓其可以配對到雙引號
+    # split之後會變成一個list，把他炸開變成row-base
     .withColumn("img_url", F.explode(C('img_url')))
-    .withColumn("img_url", F.split(C('img_url'), "\" title"))
-    .withColumn("img_url", F.explode(C('img_url')))
-    .where(C("img_url").rlike(".jpg|.png"))
-    .where(C("img_url").rlike("https"))
-    .where(~C("img_url").rlike("href"))
+    # 接著進行re match
+    .withColumn("img_url", F.regexp_extract(C('img_url'), '(http.*[jpg|png])\".*title', 0))
+    # 並把 " title" 替換掉
+    .withColumn("img_url", F.regexp_replace(C('img_url'), r'\"\s+title', ''))\
+    # 沒有被配到的會是空字串，無法直接drop，把他們換成null，使用when function
+    .withColumn("img_url", F.when(C('img_url') == '', None).otherwise(C('img_url')))\
+    # 最後把他們丟掉
+    .na.drop(subset=["img_url"])
+    # 丟掉之後收起來，使用collect_list，把他們整回到article level
     .groupBy("id").agg(F.collect_list(C("img_url")).alias("img_url"))
     .drop(C('text'))
-
 )
 
 df.show(n=20, truncate=False, vertical=True)
