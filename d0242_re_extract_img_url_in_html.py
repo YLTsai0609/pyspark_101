@@ -84,20 +84,41 @@ df.show()
 # 2-1. (http.*[jpg|png])\" - 會抓到https://pic.pimg.tw/happy78/1528543959-4177938168_n.jpg" title="IMG_5227.jpg"，中間會有空白
 # 2-2. (http\S+[jpg|png])\".*title - 配title才不會抓到奇怪的html
 # 2-3. 接著在把" title"丟掉
+# df = (
+#     df
+#     .withColumn("img_url", F.split(C('text'), "src=\""))  # \" 是逃脫字元，讓其可以配對到雙引號
+#     # split之後會變成一個list，把他炸開變成row-base
+#     .withColumn("img_url", F.explode(C('img_url')))
+#     # 接著進行re match，以http開頭，沒有空白字元(\S)，一個或多個，會配到jpg或是png，並以title結尾
+#     .withColumn("img_url", F.regexp_extract(C('img_url'), r'(http\S+[jpg|png])\".*title', 0))
+#     # " title" 替換掉
+#     .withColumn("img_url", F.regexp_replace(C('img_url'), r'\"\s+title', ''))\
+#     # 沒有被配到的會是空字串，無法直接drop，把他們換成null，使用when function
+#     .withColumn("img_url", F.when(C('img_url') == '', None).otherwise(C('img_url')))\
+#     # 最後把他們丟掉
+#     .na.drop(subset=["img_url"])
+#     # 丟掉之後收起來，使用collect_list，把他們整回到article level
+#     .groupBy("id").agg(F.collect_list(C("img_url")).alias("img_url"))
+#     .drop(C('text'))
+# )
+
+# sol 4 smarter regax matching
+# 1. split 分隔符不能切到我們要的內容
+# 2 (http\S+(jpg)|(png))\b - [jpg|png]意思是match, j, p, g, p, n, g，而(jpg|png)則是match jpg或是png，\b則是match到word boundary
+# 如此一來不用清整title，況且()對於Java應該也不是matching groups的意思
+# 此方案對比sol3會快一倍，因為sol3會多跑一次regexp_replace
 df = (
     df
     .withColumn("img_url", F.split(C('text'), "src=\""))  # \" 是逃脫字元，讓其可以配對到雙引號
     # split之後會變成一個list，把他炸開變成row-base
     .withColumn("img_url", F.explode(C('img_url')))
     # 接著進行re match，以http開頭，沒有空白字元(\S)，一個或多個，會配到jpg或是png，並以title結尾
-    .withColumn("img_url", F.regexp_extract(C('img_url'), r'(http\S+[jpg|png])\".*title', 0))
-    # " title" 替換掉
-    .withColumn("img_url", F.regexp_replace(C('img_url'), r'\"\s+title', ''))\
-    # 沒有被配到的會是空字串，無法直接drop，把他們換成null，使用when function
+    .withColumn("img_url", F.regexp_extract(C('img_url'), r'http\S+(jpg)|(png)\b', 0))
+    # # 沒有被配到的會是空字串，無法直接drop，把他們換成null，使用when function
     .withColumn("img_url", F.when(C('img_url') == '', None).otherwise(C('img_url')))\
-    # 最後把他們丟掉
+    # # 最後把他們丟掉
     .na.drop(subset=["img_url"])
-    # 丟掉之後收起來，使用collect_list，把他們整回到article level
+    # # 丟掉之後收起來，使用collect_list，把他們整回到article level
     .groupBy("id").agg(F.collect_list(C("img_url")).alias("img_url"))
     .drop(C('text'))
 )
