@@ -110,3 +110,5 @@ TODO parquet
 [pandas 101 from yulong's note](https://github.com/YLTsai0609/pandas_101)
 
 [Apache Parquet 2.0](https://parquet.apache.org/)
+
+[Learning Apache Spark with Python](https://runawayhorse001.github.io/LearningApacheSpark/pyspark.pdf)
