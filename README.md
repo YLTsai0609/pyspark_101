@@ -23,9 +23,10 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 | 005          |1/13|[RDD pararllelization Repartition() vs Coalesce()](005_rdd_repartition_coalesce.py)  ||
 | 006          |1/18|[RDD operations - transformations (from 006 - 0064)](006_rdd_transformation.py)  ||
 | 007          |2/8|[cluster managers](addtional/004_cluster_manager.md)  ||
-| 008          |2/22|[spark UI](addtional/004_cluster_manager.md)  ||
+| 008          |2/22|[spark UI](addtional/007_spark_ui.py)  ||
 | 009          |2/23|[RDD shuffle](009_rdd_shuffle.py)  ||
 | 009          |2/23|[RDD persist](010_rdd_persist.py)  ||
+| 010          |3/9|[Broadcasting](011_broadcasting.py)  ||
 
 TODO Histroy Server / SparkUI
 
@@ -86,9 +87,9 @@ TODO parquet
 |------------|----|---------|------|
 | 001 |1/21| MapReduce  |  |
 | 002 |1/21| spark_best_practice(continuously updating)  |  |
-| 003 |1/26| Introduction to Spark(I) |  |
+| 003 |1/26| Introduction to Spark(I) - rdd ops, shuffle and stage |  |
 | 004 |2/14| Apache Parquet 2.0 |  |
-| 006 || Introduction to Spark(II) |  |
+| 006 || Introduction to Spark(II) - Driver, Executor, Application, ... |  |
 
 # Terminology
 
