@@ -111,8 +111,6 @@ TODO parquet
 
 [Apache Parquet 2.0](https://parquet.apache.org/)
 
-<<<<<<< HEAD
 [Learning Apache Spark with Python](https://runawayhorse001.github.io/LearningApacheSpark/pyspark.pdf)
-=======
+
 [pyspark cheatsheet](https://github.com/kevinschaich/pyspark-cheatsheet)
->>>>>>> 6147ad05ba59ef06102dfbdf4a9a19895083af6a
