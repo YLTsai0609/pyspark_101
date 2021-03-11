@@ -28,12 +28,6 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 | 009          |2/23|[RDD persist](010_rdd_persist.py)  ||
 | 010          |3/9|[Broadcasting](011_broadcasting.py)  ||
 
-TODO Histroy Server / SparkUI
-
-TODO RDD
-
-TODO control partitioning
-
 ## Pyspark DataFrame
 
 | Content ID |Date| Content | Note |
@@ -72,15 +66,6 @@ TODO control partitioning
 |------------|----|---------|------|
 |p001|2/13|[spark-df-profiling](https://github.com/julioasotodv/spark-df-profiling)|setup doc on `pkg/p001` |
 
-## PySpark DataSource
-
-| Content ID |Date| Content | Note |
-|------------|----|---------|------|
-|d0011_create_dataframe_csv|||
-|d0012_create_dataframe_json|||
-
-TODO parquet
-
 ## Addtiional
 
 | Content ID |Date| Content | Note |
@@ -98,7 +83,7 @@ TODO parquet
 * [x] map-reduce
 * [x] yarn
 * [x] mesos
-* [x] parque
+* [x] parquet
 
 # Reference
 
@@ -111,5 +96,7 @@ TODO parquet
 [pandas 101 from yulong's note](https://github.com/YLTsai0609/pandas_101)
 
 [Apache Parquet 2.0](https://parquet.apache.org/)
+
+[Learning Apache Spark with Python](https://runawayhorse001.github.io/LearningApacheSpark/pyspark.pdf)
 
 [pyspark cheatsheet](https://github.com/kevinschaich/pyspark-cheatsheet)
