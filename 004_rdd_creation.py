@@ -1,4 +1,4 @@
-'''
+"""
 1. https://sparkbyexamples.com/pyspark-rdd
 2. https://kknews.cc/zh-tw/code/j24qnle.html
 3. Official RDD programming guide https://spark.apache.org/docs/latest/rdd-programming-guide.html
@@ -47,7 +47,7 @@ PySpark RDD的特色
 Dig more 
 https://sparkbyexamples.com/pyspark-rdd/
 
-'''
+"""
 
 # 建立RDD
 
@@ -56,14 +56,15 @@ https://sparkbyexamples.com/pyspark-rdd/
 # referencing a dataset in an external sotrage ststem(HDFS, S3, HBase)
 
 from pyspark.sql import SparkSession
-spark = SparkSession.builder.master("local[1]") \
-    .appName('SparkByExamples.com') \
-    .getOrCreate()
+
+spark = (
+    SparkSession.builder.master("local[1]").appName("SparkByExamples.com").getOrCreate()
+)
 
 
 data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 rdd = spark.sparkContext.parallelize(data, 4)
-print('Method of RDD : ', dir(rdd))
-print('initial partition count : ', str(rdd.getNumPartitions()))
+print("Method of RDD : ", dir(rdd))
+print("initial partition count : ", str(rdd.getNumPartitions()))
 print("RDD count : " + str(rdd.count()))
-print('Whole list is : ', rdd.collect())
+print("Whole list is : ", rdd.collect())

@@ -1,4 +1,4 @@
-'''
+"""
 https://github.com/spark-examples/pyspark-examples/blob/master/pyspark-filter.py
 
 https://sparkbyexamples.com/pyspark/pyspark-where-filter/
@@ -9,19 +9,15 @@ use filter() or where( for sql background), they are exactly the same.
 
 filter(condition)
 
-'''
+"""
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col
-spark: SparkSession = SparkSession.builder \
-    .master("local[1]") \
-    .appName("SparkByExamples.com") \
-    .getOrCreate()
 
-data = [
-    ("James", None, "M"),
-    ("Anna", "NY", "F"),
-    ("Julia", None, None)
-]
+spark: SparkSession = SparkSession.builder.master("local[1]").appName(
+    "SparkByExamples.com"
+).getOrCreate()
+
+data = [("James", None, "M"), ("Anna", "NY", "F"), ("Julia", None, None)]
 
 columns = ["name", "state", "gender"]
 df = spark.createDataFrame(data, columns)

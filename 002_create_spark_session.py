@@ -1,4 +1,4 @@
-'''
+"""
 https://sparkbyexamples.com/pyspark/pyspark-what-is-sparksession/
 1. Spark是一個分散式in-memory的運算框架，所以中間包含網路溝通層，進行一次任務就必須開啟一次Session
 2. SparkSesson在spark 2.0之後有，作為entry point
@@ -9,7 +9,7 @@ https://sparkbyexamples.com/pyspark/pyspark-what-is-sparksession/
     3. Streamming Context
     4. Hive Context
 4. PySpark提供了一個spark物件，是一個SparkSession class
-'''
+"""
 
 import pyspark
 from pyspark.sql import SparkSession
@@ -22,9 +22,9 @@ from pyspark.sql import SparkSession
 # getOrCreate() - 單例模式
 # 當我們建立一個SparkSession，裡面其實在每個JVM上開了一個SparkContext
 
-spark = SparkSession.builder.master("local[1]") \
-    .appName('SparkByExamples.com') \
-    .getOrCreate()
+spark = (
+    SparkSession.builder.master("local[1]").appName("SparkByExamples.com").getOrCreate()
+)
 
 
 # 一個session有多種方法可以使用

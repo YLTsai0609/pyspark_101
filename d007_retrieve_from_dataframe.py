@@ -1,4 +1,4 @@
-'''
+"""
 https://sparkbyexamples.com/pyspark/pyspark-collect/
 
 https://github.com/spark-examples/pyspark-examples/blob/master/pyspark-collect.py
@@ -14,19 +14,15 @@ collect(action) - list of Raw object
 
 select(transformation) return a spark dataframe
 
-'''
+"""
 
 
 import pyspark
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName("SparkByExamples.com").getOrCreate()
 
-dept = [("Finance", 10),
-        ("Marketing", 20),
-        ("Sales", 30),
-        ("IT", 40)
-        ]
+dept = [("Finance", 10), ("Marketing", 20), ("Sales", 30), ("IT", 40)]
 deptColumns = ["dept_name", "dept_id"]
 deptDF = spark.createDataFrame(data=dept, schema=deptColumns)
 deptDF.printSchema()
@@ -40,4 +36,4 @@ dataCollect2 = deptDF.select("dept_name").collect()
 print(dataCollect2)
 
 for row in dataCollect:
-    print(row['dept_name'] + "," + str(row['dept_id']))
+    print(row["dept_name"] + "," + str(row["dept_id"]))

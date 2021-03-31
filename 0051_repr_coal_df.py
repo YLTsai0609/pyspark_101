@@ -1,14 +1,14 @@
-'''
+"""
 同樣的邏輯，太大的csv檔案可以透過cluster架一個RDD，並包一層DataFrame API
 亦能夠透過repartition, coalesce來重新分配計算節點
-'''
+"""
 import pyspark
 from pyspark.sql import SparkSession
 
 # default we create 5 partitions
-spark = SparkSession.builder.master("local[5]") \
-    .appName('SparkByExamples.com') \
-    .getOrCreate()
+spark = (
+    SparkSession.builder.master("local[5]").appName("SparkByExamples.com").getOrCreate()
+)
 
 df = spark.range(0, 20)  # spark中的內建dataframe
 df2 = df.repartition(6)
