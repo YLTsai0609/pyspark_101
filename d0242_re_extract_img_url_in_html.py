@@ -113,7 +113,10 @@ df = (
     # split之後會變成一個list，把他炸開變成row-base
     .withColumn("img_url", F.explode(C('img_url')))
     # 接著進行re match，以http開頭，沒有空白字元(\S)，一個或多個，會配到jpg或是png，並以title結尾
-    .withColumn("img_url", F.regexp_extract(C('img_url'), r'http\S+(jpg)|(png)\b', 0))
+    .withColumn("img_url", F.regexp_extract(C('img_url'),
+                                            r'(http\S+jpg\b)|(http\S+png\b)',
+                                            0))
+
     # # 沒有被配到的會是空字串，無法直接drop，把他們換成null，使用when function
     .withColumn("img_url", F.when(C('img_url') == '', None).otherwise(C('img_url')))\
     # # 最後把他們丟掉
