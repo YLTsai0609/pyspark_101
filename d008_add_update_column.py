@@ -1,4 +1,4 @@
-'''
+"""
 https://sparkbyexamples.com/pyspark/pyspark-withcolumn/
 
 https://github.com/spark-examples/pyspark-examples/blob/master/pyspark-withcolumn.py
@@ -11,7 +11,7 @@ QA :
 
 How to add a series-like object to pyspark dataframe?
 
-'''
+"""
 
 
 import pyspark
@@ -19,14 +19,15 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, lit
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType
 
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName("SparkByExamples.com").getOrCreate()
 
-data = [('James', '', 'Smith', '1991-04-01', 'M', 3000),
-        ('Michael', 'Rose', '', '2000-05-19', 'M', 4000),
-        ('Robert', '', 'Williams', '1978-09-05', 'M', 4000),
-        ('Maria', 'Anne', 'Jones', '1967-12-01', 'F', 4000),
-        ('Jen', 'Mary', 'Brown', '1980-02-17', 'F', -1)
-        ]
+data = [
+    ("James", "", "Smith", "1991-04-01", "M", 3000),
+    ("Michael", "Rose", "", "2000-05-19", "M", 4000),
+    ("Robert", "", "Williams", "1978-09-05", "M", 4000),
+    ("Maria", "Anne", "Jones", "1967-12-01", "F", 4000),
+    ("Jen", "Mary", "Brown", "1980-02-17", "F", -1),
+]
 
 columns = ["firstname", "middlename", "lastname", "dob", "gender", "salary"]
 df = spark.createDataFrame(data=data, schema=columns)
@@ -51,35 +52,42 @@ df4.printSchema()
 df5 = df.withColumn("Country", lit("USA"))
 df5.printSchema()
 
-df6 = df.withColumn("Country", lit("USA")) \
-    .withColumn("anotherColumn", lit("anotherValue"))
+df6 = df.withColumn("Country", lit("USA")).withColumn(
+    "anotherColumn", lit("anotherValue")
+)
 df6.printSchema()
 
 # rename column
-df.withColumnRenamed("gender", "sex") \
-  .show(truncate=False)
+df.withColumnRenamed("gender", "sex").show(truncate=False)
 
 # drop
-df4.drop("CopiedColumn") \
-    .show(truncate=False)
+df4.drop("CopiedColumn").show(truncate=False)
 
-dataStruct = [(("James", "", "Smith"), "36636", "M", "3000"),
-              (("Michael", "Rose", ""), "40288", "M", "4000"),
-              (("Robert", "", "Williams"), "42114", "M", "4000"),
-              (("Maria", "Anne", "Jones"), "39192", "F", "4000"),
-              (("Jen", "Mary", "Brown"), "", "F", "-1")
-              ]
+dataStruct = [
+    (("James", "", "Smith"), "36636", "M", "3000"),
+    (("Michael", "Rose", ""), "40288", "M", "4000"),
+    (("Robert", "", "Williams"), "42114", "M", "4000"),
+    (("Maria", "Anne", "Jones"), "39192", "F", "4000"),
+    (("Jen", "Mary", "Brown"), "", "F", "-1"),
+]
 
-schemaStruct = StructType([
-    StructField('name', StructType([
-        StructField('firstname', StringType(), True),
-        StructField('middlename', StringType(), True),
-        StructField('lastname', StringType(), True)
-    ])),
-    StructField('dob', StringType(), True),
-    StructField('gender', StringType(), True),
-    StructField('salary', StringType(), True)
-])
+schemaStruct = StructType(
+    [
+        StructField(
+            "name",
+            StructType(
+                [
+                    StructField("firstname", StringType(), True),
+                    StructField("middlename", StringType(), True),
+                    StructField("lastname", StringType(), True),
+                ]
+            ),
+        ),
+        StructField("dob", StringType(), True),
+        StructField("gender", StringType(), True),
+        StructField("salary", StringType(), True),
+    ]
+)
 
 
 df7 = spark.createDataFrame(data=dataStruct, schema=schemaStruct)

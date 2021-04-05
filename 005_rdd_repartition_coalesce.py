@@ -1,4 +1,4 @@
-'''
+"""
 Repartition(重分區) and Coalesce(合併)
 
 1. Repartition and Coalesce section in rdd https://sparkbyexamples.com/pyspark-rdd/
@@ -33,26 +33,33 @@ PySpark configuration
         This property is available only in DataFrame API but not in RDD.
     可以透過
     spark.conf.set("spark.sql.shuffle.partitions", "500")來設定[?]    
-'''
+"""
 import pyspark
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder.master("local[1]") \
-    .appName('SparkByExamples.com') \
-    .getOrCreate()
+spark = (
+    SparkSession.builder.master("local[1]").appName("SparkByExamples.com").getOrCreate()
+)
 sc = spark.sparkContext
 
 data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 rdd = sc.parallelize(data, 4)
 repar_rdd = rdd.repartition(10)
 coal_rdd = repar_rdd.coalesce(2)
-print('rdd id', rdd.id, 'number of partitions : ', rdd.getNumPartitions())
-print('repartition rdd id', repar_rdd.id,
-      'number of partitions : ', repar_rdd.getNumPartitions())
-print('coal rdd id', coal_rdd.id,
-      'number of partitions : ', coal_rdd.getNumPartitions())
+print("rdd id", rdd.id, "number of partitions : ", rdd.getNumPartitions())
+print(
+    "repartition rdd id",
+    repar_rdd.id,
+    "number of partitions : ",
+    repar_rdd.getNumPartitions(),
+)
+print(
+    "coal rdd id", coal_rdd.id, "number of partitions : ", coal_rdd.getNumPartitions()
+)
 
-for dataset, save_folder in zip([rdd, repar_rdd, coal_rdd], ['original', 'repartition', 'coalesce']):
-    save_path = f'tmp/{save_folder}'
+for dataset, save_folder in zip(
+    [rdd, repar_rdd, coal_rdd], ["original", "repartition", "coalesce"]
+):
+    save_path = f"tmp/{save_folder}"
     dataset.saveAsTextFile(save_path)
     print(save_path)

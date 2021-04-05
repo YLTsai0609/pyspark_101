@@ -1,4 +1,4 @@
-'''
+"""
 PySpark RDD Operations
 
 https://sparkbyexamples.com/pyspark-rdd
@@ -8,14 +8,17 @@ RDD transformations –
     instead of updating an RDD, these operations return another RDD.
 RDD actions – 
     operations that trigger computation and return RDD values.
-'''
+"""
 from pyspark.sql import SparkSession
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
-data = ["Project Gutenberg’s",
-        "Alice’s Adventures in Wonderland",
-        "Project Gutenberg’s",
-        "Adventures in Wonderland",
-        "Project Gutenberg’s"]
+
+spark = SparkSession.builder.appName("SparkByExamples.com").getOrCreate()
+data = [
+    "Project Gutenberg’s",
+    "Alice’s Adventures in Wonderland",
+    "Project Gutenberg’s",
+    "Adventures in Wonderland",
+    "Project Gutenberg’s",
+]
 rdd = spark.sparkContext.parallelize(data)
 
 for element in rdd.collect():
@@ -38,13 +41,17 @@ rdd5 = rdd4.map(lambda x: (x[1], x[0])).sortByKey()
 for element in rdd5.collect():
     print(element)
 # filter
-rdd6 = rdd5.filter(lambda x: 'a' in x[1])
+rdd6 = rdd5.filter(lambda x: "a" in x[1])
 for element in rdd6.collect():
     print(element)
 
 from pyspark.sql.functions import col, expr
+
 data = [("2019-01-23", 1), ("2019-06-24", 2), ("2019-09-20", 3)]
-spark.createDataFrame(data).toDF("date", "increment") \
-    .select(col("date"), col("increment"),
-            expr("add_months(to_date(date,'yyyy-MM-dd'),cast(increment as int))").alias("inc_date")) \
-    .show()
+spark.createDataFrame(data).toDF("date", "increment").select(
+    col("date"),
+    col("increment"),
+    expr("add_months(to_date(date,'yyyy-MM-dd'),cast(increment as int))").alias(
+        "inc_date"
+    ),
+).show()

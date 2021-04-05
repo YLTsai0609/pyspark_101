@@ -1,4 +1,4 @@
-'''
+"""
 https://sparkbyexamples.com/pyspark/pyspark-accumulator-with-example/
 
 author SparkByExamples.com
@@ -8,10 +8,11 @@ author SparkByExamples.com
 3. sparkContext.accumulator()用來建立 accumulator variables
     add()用來更新值
     value用來取得結果
-'''
+"""
 
 import pyspark
 from pyspark.sql import SparkSession
+
 spark = SparkSession.builder.appName("accumulator").getOrCreate()
 
 accum = spark.sparkContext.accumulator(0)

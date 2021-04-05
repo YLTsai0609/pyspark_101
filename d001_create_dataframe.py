@@ -1,4 +1,4 @@
-'''
+"""
 RDD --> DataFrame
 txt, csv, json, orv, avro,
 parquet, xml, hdfs, s3, dbfs, azure blob file
@@ -12,17 +12,18 @@ so there are some custom method we need call.
 
 https://sparkbyexamples.com/pyspark/different-ways-to-create-dataframe-in-pyspark/
 
-'''
+"""
 
 import pyspark
 from pyspark.sql import SparkSession, Row
+
 # from pyspark.sql.types import StructType, StructField, StringType, IntegerType
 # from pyspark.sql.functions import *
 
 columns = ["language", "users_count"]
 data = [("Java", "20000"), ("Python", "100000"), ("Scala", "3000")]
 
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName("SparkByExamples.com").getOrCreate()
 rdd = spark.sparkContext.parallelize(data)
 
 dfFromRDD1 = rdd.toDF()

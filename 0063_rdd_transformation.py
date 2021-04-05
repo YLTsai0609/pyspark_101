@@ -1,4 +1,4 @@
-'''
+"""
 PySpark RDD Operations
 
 https://sparkbyexamples.com/pyspark-rdd
@@ -8,18 +8,14 @@ RDD transformations –
     instead of updating an RDD, these operations return another RDD.
 RDD actions – 
     operations that trigger computation and return RDD values.
-'''
+"""
 
 import pyspark
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName("SparkByExamples.com").getOrCreate()
 
-dept = [("Finance", 10),
-        ("Marketing", 20),
-        ("Sales", 30),
-        ("IT", 40)
-        ]
+dept = [("Finance", 10), ("Marketing", 20), ("Sales", 30), ("IT", 40)]
 rdd = spark.sparkContext.parallelize(dept)
 
 df = rdd.toDF()
@@ -37,10 +33,13 @@ deptDF.show(truncate=False)
 
 
 from pyspark.sql.types import StructType, StructField, StringType
-deptSchema = StructType([
-    StructField('dept_name', StringType(), True),
-    StructField('dept_id', StringType(), True)
-])
+
+deptSchema = StructType(
+    [
+        StructField("dept_name", StringType(), True),
+        StructField("dept_id", StringType(), True),
+    ]
+)
 
 deptDF1 = spark.createDataFrame(data=dept, schema=deptSchema)
 deptDF1.printSchema()

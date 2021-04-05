@@ -1,9 +1,10 @@
-'''
+"""
 https://sparkbyexamples.com/pyspark/pyspark-accumulator-with-example/
-'''
+"""
 
 import pyspark
 from pyspark.sql import SparkSession
+
 spark = SparkSession.builder.appName("accumulator").getOrCreate()
 
 accuSum = spark.sparkContext.accumulator(0)

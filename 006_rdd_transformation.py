@@ -1,4 +1,4 @@
-'''
+"""
 PySpark RDD Operations
 
 https://sparkbyexamples.com/pyspark-rdd
@@ -12,14 +12,14 @@ RDD actions –
 RDD transformation -
      wide dependency - need connection to exchange data with the other partition
      narrow dependency - can compute in individual partition
-'''
+"""
 
 import pyspark
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder.appName('SparkByExample.com').getOrCreate()
+spark = SparkSession.builder.appName("SparkByExample.com").getOrCreate()
 
-rdd = spark.sparkContext.textFile('data/simple_text.txt')
+rdd = spark.sparkContext.textFile("data/simple_text.txt")
 
 print(rdd, type(rdd))
 

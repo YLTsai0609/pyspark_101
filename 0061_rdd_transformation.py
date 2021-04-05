@@ -1,4 +1,4 @@
-'''
+"""
 PySpark RDD Operations
 
 https://sparkbyexamples.com/pyspark-rdd
@@ -8,23 +8,26 @@ RDD transformations –
     instead of updating an RDD, these operations return another RDD.
 RDD actions – 
     operations that trigger computation and return RDD values.
-'''
+"""
 from pyspark.sql import SparkSession
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
 
-data = ["Project",
-        "Gutenberg’s",
-        "Alice’s",
-        "Adventures",
-        "in",
-        "Wonderland",
-        "Project",
-        "Gutenberg’s",
-        "Adventures",
-        "in",
-        "Wonderland",
-        "Project",
-        "Gutenberg’s"]
+spark = SparkSession.builder.appName("SparkByExamples.com").getOrCreate()
+
+data = [
+    "Project",
+    "Gutenberg’s",
+    "Alice’s",
+    "Adventures",
+    "in",
+    "Wonderland",
+    "Project",
+    "Gutenberg’s",
+    "Adventures",
+    "in",
+    "Wonderland",
+    "Project",
+    "Gutenberg’s",
+]
 
 rdd = spark.sparkContext.parallelize(data)
 
