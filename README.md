@@ -8,9 +8,11 @@ Polish up your data processing skill using pyspark!
 
 # Marathon
 
-**This repo contains 41 example scripts so far.**
+**This repo contains 50+ example scripts so far.**
 
 The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-examples/pyspark-examples)
+
+**[The notebook is a cheatsheet contains 100+ problem and pyspark solutions](notebook/pyspark_challenge.ipynb)**
 
 ## Pyspark basic
 
@@ -84,6 +86,10 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 * [x] yarn
 * [x] mesos
 * [x] parquet
+
+# Optimizing Technique
+
+* [ ] [Optimizing Apache Spark SQL Joins: Spark Summit East talk by Vida Ha](https://www.youtube.com/watch?v=fp53QhSfQcI)
 
 # Reference
 
