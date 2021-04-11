@@ -89,7 +89,8 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 
 # Optimizing Technique
 
-* [ ] [Optimizing Apache Spark SQL Joins: Spark Summit East talk by Vida Ha](https://www.youtube.com/watch?v=fp53QhSfQcI)
+* [ ] [2017 - Optimizing Apache Spark SQL Joins: Spark Summit East talk by Vida Ha](https://www.youtube.com/watch?v=fp53QhSfQcI)
+* [ ] [2019 - Optimizing Apache Spark SQL at LinkedIn](https://www.youtube.com/watch?v=Rok5wwUx-XI)
 
 # Reference
 
@@ -106,3 +107,7 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 [Learning Apache Spark with Python](https://runawayhorse001.github.io/LearningApacheSpark/pyspark.pdf)
 
 [pyspark cheatsheet](https://github.com/kevinschaich/pyspark-cheatsheet)
+
+[2017 - Optimizing Apache Spark SQL Joins: Spark Summit East talk by Vida Ha](https://www.youtube.com/watch?v=fp53QhSfQcI)
+
+[2019 - Optimizing Apache Spark SQL at LinkedIn](https://www.youtube.com/watch?v=Rok5wwUx-XI)
