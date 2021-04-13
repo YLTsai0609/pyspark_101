@@ -73,11 +73,12 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 | Content ID |Date| Content | Note |
 |------------|----|---------|------|
 | 001 |1/21| MapReduce  |  |
-| 002 |1/21| spark_best_practice(continuously updating)  |  |
-| 003 |1/26| Introduction to Spark(I) - rdd ops, shuffle and stage |  |
-| 004 |2/14| Apache Parquet 2.0 |  |
-| 006 || Introduction to Spark(II) - Driver, Executor, Application, ... |  |
-
+| 002 |1/26| Introduction to Spark(I) - rdd ops, shuffle and stage | revisited 4/13 |
+| 003 |2/14| Apache Parquet 2.0 |  |
+| 004 |2/16| Introduction to Parquet |  |
+| 005 |4/13| Introduction to Spark(II) - Driver, Executor, Application, ... |  |
+| 006 || spark join |  |
+| 007 || DataFrame API and RDD API|
 # Terminology
 
 * [x] rdd
