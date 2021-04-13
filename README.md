@@ -68,7 +68,7 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 |------------|----|---------|------|
 |p001|2/13|[spark-df-profiling](https://github.com/julioasotodv/spark-df-profiling)|setup doc on `pkg/p001` |
 
-## Addtiional
+## Concept
 
 | Content ID |Date| Content | Note |
 |------------|----|---------|------|
