@@ -42,7 +42,7 @@ Spark支援不同的運作模式，包含Local，Standalone(仍然是cluster mod
 Scale : 
 
 1. Job > Stage > Task
-2. DAG > RDD (事實上是由RDD的上下游關係組成DAG)
+DAG -> 由source code組成的計算圖，和RDD無關
 
 <img src='assets/arct_3.png'></img>
 
@@ -58,6 +58,12 @@ Scale :
 8. 釋放資源
 
 <img src='assets/arct_2.png'></img>
+
+## UI Example
+
+TODO
+
+dataframe -> groupby -> count -> sort
 
 # Ref
 

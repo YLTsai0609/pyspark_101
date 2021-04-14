@@ -11,7 +11,6 @@ Most basic type of join
 
 the key and the hash is a label to make data to an excutor and finally merge data.
 
-TODO - key and hash?
 
 ![img](assets/sparkjoin_3.png)
 
@@ -73,4 +72,12 @@ small table vs big table - use broadcast hash join
 
 ![img](assets/sparkjoin_15.png)
 
-TODO
+# One to Many Join
+
+![img](assets/sparkjoin_16.png)
+
+# Theta Join
+
+Not the same key, but `keyA < KeyB + 10` for example
+
+![img](assets/sparkjoin_17.png)

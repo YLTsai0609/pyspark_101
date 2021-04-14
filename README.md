@@ -2,7 +2,7 @@
 
 Polish up your data processing skill using pyspark!
 
-# Installation(stand alone)
+# Installation
 
 [check here to install spark 3.0+](https://github.com/YLTsai0609/DataScience_Note/blob/master/spark.md)
 
