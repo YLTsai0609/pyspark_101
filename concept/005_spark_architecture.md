@@ -19,7 +19,7 @@ Master Node : 節點上常駐Daemon進程以及Driver進程，Master負責將任
 
 Worker Node : 節點上常駐Worker Daemon，並執行任務
 
-Spark支援不同的運作模式，包含Local，Standalonem Mesoes, Yarn
+Spark支援不同的運作模式，包含Local，Standalone(仍然是cluster mode) Mesoes, Yarn
 
 不同的運作模式會將Driver 調度到不同的節點上實行，local一班用於本地端測試
 
