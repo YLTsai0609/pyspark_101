@@ -77,8 +77,8 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 | 003 |2/14| Apache Parquet 2.0 |  |
 | 004 |2/16| Introduction to Parquet |  |
 | 005 |4/13| Introduction to Spark(II) - Driver, Executor, Application, ... |  |
-| 006 || spark join |  |
-| 007 || DataFrame API and RDD API|
+| 006 || spark join I  |  |
+| 007 || spark join II  |  |
 # Terminology
 
 * [x] rdd
