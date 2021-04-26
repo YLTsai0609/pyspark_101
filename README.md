@@ -12,7 +12,7 @@ Polish up your data processing skill using pyspark!
 
 The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-examples/pyspark-examples)
 
-**[The notebook is a cheatsheet contains 100+ problem and pyspark solutions](notebook/pyspark_challenge.ipynb)**
+**[The notebook is a cheatsheet contains 60+ problem and pyspark solutions](notebook/pyspark_challenge.ipynb)**
 
 ## Pyspark basic
 
@@ -77,8 +77,10 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 | 003 |2/14| Apache Parquet 2.0 |  |
 | 004 |2/16| Introduction to Parquet |  |
 | 005 |4/13| Introduction to Spark(II) - Driver, Executor, Application, ... |  |
-| 006 || spark join I  |  |
-| 007 || spark join II  |  |
+| 006 |4/27| spark join I  |  |
+| 007 |4/27| spark join II  |  |
+| 008 || detect data skew in sparkUI  |  |
+
 # Terminology
 
 * [x] rdd
@@ -90,7 +92,7 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 
 # Optimizing Technique
 
-* [ ] [2017 - Optimizing Apache Spark SQL Joins: Spark Summit East talk by Vida Ha](https://www.youtube.com/watch?v=fp53QhSfQcI)
+* [x] [2017 - Optimizing Apache Spark SQL Joins: Spark Summit East talk by Vida Ha](https://www.youtube.com/watch?v=fp53QhSfQcI)
 * [ ] [2019 - Optimizing Apache Spark SQL at LinkedIn](https://www.youtube.com/watch?v=Rok5wwUx-XI)
 
 # Reference
