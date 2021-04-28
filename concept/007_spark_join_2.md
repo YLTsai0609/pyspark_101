@@ -33,11 +33,11 @@ Hash Join
 
 broadcast的大小限制可以由`spark.sql.autoBroadcastJoinThreshold`來條整
 
-由於broadcast之後以定會做hash，如果你用大表，Excutor就會OOM，而且broadcast會非常慢，因為你透過網路傳輸很大的資料
+<img src='./assets/join2_3.png'></img>
+
+由於broadcast之後一定會做hash，如果你用大表，Excutor就會OOM，而且broadcast會非常慢，因為你透過網路傳輸很大的資料
 
 也因此隨著要broadcast的表個越來越大，消耗越來越多網路資源，使得另一種做法產生，也就是 Shuffle Hash Join
-
-<img src='./assets/join2_3.png'></img>
 
 # Shuffle Hash Join
 
@@ -60,7 +60,7 @@ SparkSQL 對兩張大表join使用了 sort-merge join，分成三個步驟
 2. sort - 對每個分區節點的兩張資料表都進行排序
 3. merge - 對排好旭的兩張分區表進行比較，分別掃一遍兩個有序序列，遇到相同key就merge，否則就取更小一邊的key(這一點要畫出來看一下)
 
-<img src='./assets/join2_3.png'></img>
+<img src='./assets/join2_4.png'></img>
 
 但spark其實有一些作弊的地方，在repartition的階段就會偷偷排序好，所以shuffle之後其實不後在sort一次，可以直接merge
 
