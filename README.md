@@ -95,6 +95,10 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 * [x] [2017 - Optimizing Apache Spark SQL Joins: Spark Summit East talk by Vida Ha](https://www.youtube.com/watch?v=fp53QhSfQcI)
 * [ ] [2019 - Optimizing Apache Spark SQL at LinkedIn](https://www.youtube.com/watch?v=Rok5wwUx-XI)
 
+# Additional
+
+* [x] - [The good, bad and ugly of spark](additional/good_bad_ugly_spark.md)
+
 # Reference
 
 [kenttw/spark_tutorial](https://github.com/kenttw/spark_tutorial)
