@@ -1,0 +1,3 @@
+[submodule "article_similarity_example"]
+	path = article_similarity_example
+	url = https://github.com/angeliababy/text_LSH.git
