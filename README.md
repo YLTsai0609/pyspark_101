@@ -98,6 +98,7 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 # Additional
 
 * [x] - [The good, bad and ugly of spark](additional/good_bad_ugly_spark.md)
+* [ ] - [Image Processing on Delta Lake - Databricks](additional/image_processsing_on_spark.md)
 
 # Reference
 
