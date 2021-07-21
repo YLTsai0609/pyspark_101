@@ -80,6 +80,7 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 | 006 |4/27| spark join I  |  |
 | 007 |4/27| spark join II  |  |
 | 008 || detect data skew in sparkUI  |  |
+| 009 | 7/21| Spark OOM||
 
 # Terminology
 
@@ -99,6 +100,7 @@ The tutorial is from [spark-examples/pyspark-examples](https://github.com/spark-
 
 * [x] - [The good, bad and ugly of spark](additional/good_bad_ugly_spark.md)
 * [ ] - [Image Processing on Delta Lake - Databricks](additional/image_processsing_on_spark.md)
+
 
 # Reference
 
