@@ -1,4 +1,4 @@
-****# Spark
+# Spark
 
 事實上UC Berkeley AMP lab在開發Spark時，是為了和Hadoop配合，而不是為了取代Hadoop，主要差異就是Spark不用寫回檔案系統
 

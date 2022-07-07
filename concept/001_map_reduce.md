@@ -9,7 +9,7 @@
 <img src='./assets/mr_1.png'></img>
 
 1. Splitting - 切分Partition，每個Partition可以是一個獨立，不和其他worker溝通的運算工作
-2. Mapping - 僅需在本地端計算的運算工作
+2. Mapping - 可以跨worker計算的運算工作，例如 filter
 3. (Reduce)Shuffling - 開始進行Worker之間的溝通，按照某種hash把同類型資料分在一起
 4. (Reduce)Reducing - 進行需要溝通的計算工作，並存取到RDD中
 
